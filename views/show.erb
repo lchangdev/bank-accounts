@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+<h1><%= @account_details.account %></h1>
+<h3>Starting Balance: $<%= @account_details.balance %></h3>
+<h3>Ending Balance: $<%= @account_details.current_balance %></h3>
+<table>
+  <thead>
+    <tr>
+      <th>Transaction History</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @account_details.summary.each do |x| %>
+    <tr>
+      <td><%= x.date %></td>
+      <td><%= x.description %></td>
+      <td>$<%= x.amount.abs %></td>
+      <td><%= x.withdrawal_deposit %></td>
+    </tr>
+    <% end %>
+</body>
+</html>

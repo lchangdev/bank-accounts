@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <h1>Account Summary</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Account Name</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="<%= url("/accounts/#{@business_checking.account}")%>">
+            <%= @business_checking.account %>
+          </a>
+        </td>
+        <td>$<%= @business_checking.current_balance %></td>
+      </tr>
+      <tr>
+        <td>
+          <a href="<%= url("/accounts/#{@purchasing_account.account}")%>">
+            <%= @purchasing_account.account %>
+          </a>
+        </td>
+        <td>$<%= @purchasing_account.current_balance %></td>
+      </tr>
+    </tbody>
+</body>
+</html>
